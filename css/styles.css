@@ -1,0 +1,356 @@
+/* RESET Y ESTRUCTURA BÁSICA */
+* {
+   margin: 0;
+  padding: 0;
+   box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Solución definitiva al scroll lateral */
+}
+
+body {
+   background: #0D102B;
+   color: #F2F2F2;
+   font-family: 'Kelvinch', serif;
+   line-height: 1.6;
+    padding-bottom: 4rem;
+   scroll-behavior: smooth;
+}
+
+h1, h2, h3, nav a {
+   font-family: 'Euphorigenic', serif;
+}
+
+a {
+   color: #BFAEFF;
+   text-decoration: none;
+   transition: color 0.3s ease;
+}
+
+a:hover {
+   color: #5be6ff;
+}
+
+/* FONT FACES */
+@font-face {
+   font-family: 'Antara';
+   src: url('../fonts/aAntaraDistance.ttf') format('truetype');
+}
+/* ... (Incluye aquí el resto de tus @font-face para Kelvinch y Euphorigenic) ... */
+
+
+/* SECCIONES PRINCIPALES (COMPACTADO Y CENTRADO) */
+.main-section {
+    /* Única regla de estilos para todas las secciones */
+   background-color: #0D102B; 
+   padding: 3rem 1rem; /* Espacio vertical reducido */
+   min-height: 50vh; /* Altura mínima reducida */
+    max-width: 1000px; /* Limitar el ancho */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; /* CLAVE: Centra todo el contenido */
+}
+
+/* Espaciado del Párrafo de la Sección Sobre Mí */
+.about-section p {
+    margin-bottom: 2rem; /* Añade un espacio después del párrafo de introducción */
+    padding: 0 1rem; /* Padding horizontal sutil para que no toque los bordes */
+}
+
+/* Espaciado del Título de Habilidades */
+.about-section h3 {
+    margin-top: 1.5rem; /* Espacio antes del título de habilidades */
+    margin-bottom: 1.5rem; /* Espacio después del título y antes de la lista */
+    color: #BFAEFF; /* Aseguramos que el color sea el de acento */
+}
+
+/* ESTILO PARA EL DIVISOR DE SECCIÓN (SEPARADOR DE NEÓN) */
+.section-divider {
+   height: 2px;
+   width: 80%;
+   max-width: 900px;
+   background-color: #BFAEFF;
+   margin: 4rem auto;
+   border-radius: 5px; 
+   box-shadow: 0 0 10px #BFAEFF, 0 0 20px rgba(175, 174, 255, 0.4);
+}
+
+
+/* ENCABEZADO Y LOGO */
+header {
+   text-align: center;
+   padding: 1rem 1rem 0;
+   position: relative;
+    /* (Mantenemos tu fondo si lo tenías) */
+    /* background-image: url("/img/fondo.png"); */ 
+}
+/* Tu animación del logo */
+@keyframes flotarLogo {
+ 0%, 100% { transform: translateY(0); }
+ 50% { transform: translateY(-5px); }
+}
+.logo {
+   width: 60%; 
+   max-width: 200px; 
+   height: auto;
+  display: block;
+  margin: 0 auto;
+   animation: flotarLogo 5s ease-in-out infinite;
+    /* ... otros estilos del logo ... */
+}
+
+
+/* NAVEGACIÓN STICKY (Barra que se queda fija) */
+nav {
+   background-color: #121437; 
+   padding: 1rem;
+   text-align: center;
+   width: 100%; 
+   margin: 0; 
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+   position: sticky; 
+   top: 0;
+   z-index: 1000;
+}
+nav ul {
+   list-style: none;
+   display: flex;
+   justify-content: center;
+   gap: 1.5rem;
+   flex-wrap: wrap;
+}
+
+/* LISTA DE HABILIDADES (CONTENEDOR UL) */
+.skills-list {
+    list-style: none; /* Elimina las viñetas */
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra la fila de etiquetas */
+    gap: 12px;
+    margin-top: 30px;
+}
+
+/* ESTILO PARA CADA CASILLA/ETIQUETA INDIVIDUAL (LI) */
+.skills-list li {
+    /* CLAVE: Esto crea la CASILLA VISIBLE */
+    background-color: #1A1B3F; /* Fondo oscuro sutil */
+    color: #BFAEFF; /* Texto violeta */
+    padding: 8px 15px; /* Espacio dentro de la caja */
+    border-radius: 5px; 
+    border: 1px solid #6B4EFF44; /* Borde sutil */
+    
+    font-size: 0.95rem;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.skills-list li:hover {
+    background-color: #2A2C60; /* Efecto hover para las habilidades */
+}
+
+/* ESTILO BASE DE LOS BOTONES DE NAVEGACIÓN */
+nav a {
+    /* Propiedades de Fuente y Espaciado */
+    font-family: 'Euphorigenic', serif;
+    font-size: 1.1rem;
+    padding: 0.5rem 1.2rem; /* CLAVE: Esto crea el espacio del "cuadro" */
+    border-radius: 6px;
+    
+    /* Propiedades Visuales de Neón */
+    color: #BFAEFF; /* Texto violeta claro */
+    border: 1px solid #BFAEFF44; /* CLAVE: Esto dibuja el borde */
+    text-shadow: 0 0 5px rgba(191, 174, 255, 0.4); /* Brillo sutil */
+    
+    /* Transiciones */
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    display: inline-block; /* Asegura que el padding funcione */
+}
+
+/* EFECTO HOVER Y ESTADO ACTIVO */
+nav a:hover,
+nav a.activo {
+    background-color: #6B4EFF; /* Fondo violeta sólido */
+    color: #0D102B; /* Texto oscuro para contraste */
+    
+    /* Efecto de Brillo Intenso */
+    box-shadow: 0 0 15px rgba(191, 174, 255, 0.7); 
+    transform: translateY(-1px); /* Pequeño levantamiento */
+}
+
+/* SECCIÓN HERO (#inicio) */
+.hero-section {
+   padding-top: 6rem;
+   padding-bottom: 6rem;
+}
+.title-accent {
+   color: #BFAEFF;
+   text-shadow: 0 0 8px #6B4EFF66; 
+   font-size: 3rem; 
+}
+
+/* BOTÓN PRINCIPAL (CTA: Call to Action - "Ver Portafolio") */
+.btn-cta {
+    /* Propiedades de visualización y espaciado */
+ display: inline-block; /* CLAVE: Permite que el padding y el fondo funcionen */
+ background-color: #6B4EFF; /* Color violeta fuerte */
+ color: #0D102B; /* Texto oscuro sobre el botón */
+ font-family: 'Euphorigenic', serif;
+ font-size: 1.5rem;
+ padding: 12px 30px; /* CLAVE: Esto le da el tamaño de "cuadro" */
+ margin-top: 30px;
+ border-radius: 5px;
+ text-transform: uppercase;
+    
+    /* Efectos de transición */
+ transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-cta:hover {
+ background-color: #BFAEFF; /* Violeta más claro al hacer hover */
+ transform: translateY(-2px);
+ box-shadow: 0 5px 15px rgba(175, 174, 255, 0.4);
+}
+
+/* SECCIÓN HABILIDADES (#sobre-mi) */
+.skills-list {
+   list-style: none;
+   padding: 0;
+  display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 12px;
+   margin-top: 30px;
+}
+/* ... (Estilos para skills-list li) ... */
+
+
+/* SECCIÓN PROYECTOS (#proyectos) */
+.galeria {
+   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+   gap: 2rem;
+   padding: 2rem;
+  max-width: 1200px;
+   margin: 0 auto;
+}
+/* ESTILOS PARA CADA TARJETA INDIVIDUAL DE PROYECTO (.pieza) */
+.pieza {
+    /* 1. La caja visible */
+    background-color: #1A1B3F; /* Fondo oscuro ligeramente diferente */
+    border: 1px solid #BFAEFF44; /* Borde sutil, estilo neón */
+    border-radius: 8px;
+    padding: 1.5rem;
+    
+    /* 2. Sombra de brillo para destacarla */
+    box-shadow: 0 0 10px rgba(175, 174, 255, 0.1); 
+    
+    /* 3. Centrado del texto interno (como ya lo habíamos definido) */
+    text-align: center;
+    
+    /* Efecto de transición para el hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pieza:hover {
+    transform: translateY(-5px); /* Se levanta un poco al pasar el mouse */
+    box-shadow: 0 10px 20px rgba(175, 174, 255, 0.2); /* Sombra más fuerte */
+}
+
+/* Títulos dentro de la pieza */
+.pieza h3 {
+    color: #BFAEFF; /* Título violeta de acento */
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* LISTA DE REDES SOCIALES (CONTENEDOR UL) */
+.redes-sociales {
+    /* CLAVE 1: ELIMINAR LAS VIÑETAS */
+    list-style: none; 
+    
+    padding: 0;
+    
+    /* PROPIEDADES CLAVE PARA LA DISPOSICIÓN HORIZONTAL Y CENTRADO */
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; /* Centrar los botones en la fila */
+    
+    gap: 1.2rem;
+    margin-top: 1.2rem;
+    max-width: 100%; 
+}
+
+/* ESTILOS PARA LOS BOTONES DE REDES SOCIALES */
+.redes-sociales li a {
+    /* Clave para que se vea como una caja y no solo texto */
+    display: inline-block; 
+    
+    color: #BFAEFF; /* Texto violeta claro */
+ font-size: 1.2rem;
+ text-decoration: none;
+ padding: 0.8rem 1.8rem; /* Hacer el botón grande */
+ 
+ /* Efecto de 'Placa' */
+border: 1px solid #BFAEFF88; /* Borde visible */
+ border-radius: 8px; /* Borde más cuadrado */
+ background-color: #1A1B3F; /* Fondo oscuro que contrasta con el body */
+
+ transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s;
+}
+
+/* El efecto hover también debe estar */
+.redes-sociales li a:hover {
+    background-color: #2A2C60; 
+    color: #5be6ff; 
+    box-shadow: 0 0 10px rgba(91, 230, 255, 0.5); 
+}
+
+
+/* ESTILOS PARA EL BOTÓN "VER DEMO" (En la sección de proyectos) */
+.ver-demo {
+ display: inline-block; /* CLAVE para que el botón se centre y tenga fondo */
+ margin-top: 1rem;
+ padding: 8px 15px;
+
+ background-color: #6B4EFF; /* Color violeta fuerte */
+ color: #F2F2F2;
+ 
+ border-radius: 5px;
+ text-decoration: none;
+ transition: background-color 0.3s;
+}
+
+.ver-demo:hover {
+    background-color: #BFAEFF; /* Un violeta más claro al hacer hover */
+    color: #0D102B;
+}
+
+/* FOOTER */
+footer {
+   text-align: center;
+   font-size: 0.9rem;
+   color: #888;
+   padding: 2rem 1rem;
+   margin-top: 2rem; /* Espacio superior reducido */
+}
+footer img {
+   max-width: 100%; 
+   height: auto; 
+  max-height: 100px;
+   margin-bottom: 0.5rem;
+}
+
+
+/* MEDIA QUERIES (Responsive) */
+@media (min-width: 768px) {
+  .logo {
+ max-width: 250px;
+ }
+   .hero-section h2 {
+ font-size: 3.5rem;
+}
+}
