@@ -353,4 +353,56 @@ footer img {
    .hero-section h2 {
  font-size: 3.5rem;
 }
+
+}
+
+/* Estado normal: Todos morados/violetas */
+.btn-red {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #BFAEFF; /* Tu violeta neón */
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #BFAEFF; /* Texto también violeta */
+    background: transparent;
+    transition: all 0.4s ease; 
+    font-family: 'Euphorigenic', serif; /* Tu fuente de títulos */
+}
+
+/* --- HOVER: El brillo temático manteniendo el borde --- */
+
+/* YouTube: Brillo Rojo */
+.btn-youtube:hover {
+    color: #FF0000;
+    border-color: #FF0000;
+    box-shadow: 0 0 10px #FF0000, 0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+/* Instagram: Brillo Fucsia */
+.btn-instagram:hover {
+    color: #E1306C;
+    border-color: #E1306C;
+    box-shadow: 0 0 10px #E1306C, 0 0 20px rgba(225, 48, 108, 0.3);
+}
+
+/* TikTok: Brillo Blanco */
+.btn-tiktok:hover {
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+    box-shadow: 0 0 10px #FFFFFF, 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* WhatsApp: Brillo Verde */
+.btn-whatsapp:hover {
+    color: #25D366;
+    border-color: #25D366;
+    box-shadow: 0 0 10px #25D366, 0 0 20px rgba(37, 211, 102, 0.3);
+}
+
+/* Wattpad: Brillo Naranja */
+.btn-wattpad:hover {
+    color: #FF8500;
+    border-color: #FF8500;
+    box-shadow: 0 0 10px #FF8500, 0 0 20px rgba(255, 133, 0, 0.3);
 }
