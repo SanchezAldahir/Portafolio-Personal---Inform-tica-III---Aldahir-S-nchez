@@ -406,3 +406,19 @@ footer img {
     border-color: #FF8500;
     box-shadow: 0 0 10px #FF8500, 0 0 20px rgba(255, 133, 0, 0.3);
 }
+
+/* --- ESTILO PARA LA SECCIÓN DE MÚSICA --- */
+
+.pieza-musica:hover {
+    border-color: #00FBFF !important; /* Cian/Azul neón */
+    box-shadow: 0 0 15px #00FBFF, 0 0 30px rgba(0, 251, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.pieza-musica h3 {
+    transition: color 0.4s;
+}
+
+.pieza-musica:hover h3 {
+    color: #00FBFF;
+}
