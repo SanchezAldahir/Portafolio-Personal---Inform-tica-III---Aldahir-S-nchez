@@ -407,18 +407,26 @@ footer img {
     box-shadow: 0 0 10px #FF8500, 0 0 20px rgba(255, 133, 0, 0.3);
 }
 
-/* --- ESTILO PARA LA SECCIÓN DE MÚSICA --- */
-
-.pieza-musica:hover {
-    border-color: #00FBFF !important; /* Cian/Azul neón */
-    box-shadow: 0 0 15px #00FBFF, 0 0 30px rgba(0, 251, 255, 0.2);
+/* --- ILUSTRACIONES (AMARILLO) --- */
+.pieza-ilustracion:hover {
+    border-color: #FFD700 !important; /* Oro/Amarillo */
+    box-shadow: 0 0 15px #FFD700, 0 0 30px rgba(255, 215, 0, 0.2);
     transform: translateY(-5px);
 }
+.pieza-ilustracion:hover h3 { color: #FFD700; }
 
-.pieza-musica h3 {
-    transition: color 0.4s;
+/* --- MÚSICA (AZUL) --- */
+.pieza-musica:hover {
+    border-color: #0047AB !important; /* Azul Cobalto */
+    box-shadow: 0 0 15px #0047AB, 0 0 30px rgba(0, 71, 171, 0.2);
+    transform: translateY(-5px);
 }
+.pieza-musica:hover h3 { color: #0047AB; }
 
-.pieza-musica:hover h3 {
-    color: #00FBFF;
+/* --- VÍDEOS (ROJO) --- */
+.pieza-video:hover {
+    border-color: #ED1C24 !important; /* Rojo vibrante */
+    box-shadow: 0 0 15px #ED1C24, 0 0 30px rgba(237, 28, 36, 0.2);
+    transform: translateY(-5px);
 }
+.pieza-video:hover h3 { color: #ED1C24; }
