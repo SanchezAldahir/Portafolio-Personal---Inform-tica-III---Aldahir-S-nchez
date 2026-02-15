@@ -432,41 +432,37 @@ footer img {
 .pieza-video:hover h3 { color: #ED1C24; }
 
 
-/* --- PANTALLA DE CARGA --- */
+/* --- PANTALLA DE CARGA SIN JS --- */
 #loading-screen {
-    position: fixed; /* Para que ocupe toda la pantalla */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #0d0a17; /* El mismo fondo oscuro de tu web */
+    background-color: #0d0a17;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999; /* Asegura que esté por encima de todo */
-    opacity: 1; /* Empieza visible */
-    transition: opacity 0.8s ease-out; /* Transición suave al desaparecer */
-}
-
-#loading-screen.fade-out {
-    opacity: 0;
-    pointer-events: none; /* Para que no bloquee los clics una vez invisible */
+    z-index: 9999;
+    
+    /* Animación: se queda 1.5s y luego se desvanece en 0.8s */
+    animation: fadeOutFinal 0.8s ease-in-out 1.5s forwards;
 }
 
 .loading-logo {
-    width: 150px; /* Tamaño de tu logo */
+    width: 150px;
     height: auto;
-    animation: pulse 1.5s infinite alternate; /* Animación de pulso */
+    animation: pulse 1.5s infinite alternate;
 }
 
-/* Animación del logo */
+/* Animación de desvanecimiento */
+@keyframes fadeOutFinal {
+    from { opacity: 1; visibility: visible; }
+    to { opacity: 0; visibility: hidden; }
+}
+
+/* La animación de pulso que ya tenías */
 @keyframes pulse {
-    from {
-        transform: scale(0.95);
-        opacity: 0.7;
-    }
-    to {
-        transform: scale(1.05);
-        opacity: 1;
-    }
+    from { transform: scale(0.95); opacity: 0.7; }
+    to { transform: scale(1.05); opacity: 1; }
 }
